@@ -54,6 +54,7 @@ class ViewController: UIViewController {
             showQuote = jsonQuote.quotes
             
             for hello in showQuote {
+                quoteTextView.text = hello.quote
                 print(hello.quote)
             }
 
