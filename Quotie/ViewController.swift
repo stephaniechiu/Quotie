@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         //Change navigation bar color to white
         navigationBarAppearace.tintColor = UIColor.white
         navigationBarAppearace.barTintColor = UIColor.white
+        
+        getURL()
     }
     
     
@@ -48,16 +50,9 @@ class ViewController: UIViewController {
     }
     
     func parse(json: Data) {
-        let decoder = JSONDecoder()
-        
-        if let jsonQuote = try? decoder.decode(Quotes.self, from: json) {
-            showQuote = jsonQuote.quotes
-            
-            for hello in showQuote {
-                quoteTextView.text = hello.quote
-                print(hello.quote)
-            }
-
+        if let jsonDict = try? JSONSerialization.jsonObject(with: json) as? NSDictionary
+        {
+            print (jsonDict)
         }
     }
     
