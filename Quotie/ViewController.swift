@@ -50,6 +50,16 @@ class ViewController: UIViewController {
     }
     
     func parse(json: Data) {
+//        if let jsonQuote = try? decoder.decode(Quotes.self, from: json) {
+//            showQuote = jsonQuote.quotes
+//
+//            for hello in showQuote {
+//                quoteTextView.text = hello.quote
+//                print(hello.quote)
+//            }
+//
+//        }
+        
         if let jsonDict = try? JSONSerialization.jsonObject(with: json) as? NSDictionary
         {
             print (jsonDict)
